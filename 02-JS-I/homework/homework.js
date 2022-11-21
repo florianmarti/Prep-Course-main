@@ -34,7 +34,7 @@ function devolverString(str) {
 function suma(x, y) {
   // "x" e "y" son números
   // Suma "x" e "y" juntos y devuelve el valor
-  return x + y;
+  return suma(x + y);
 }
 
 function resta(x, y) {
@@ -44,12 +44,12 @@ function resta(x, y) {
 
 function multiplica(x, y) {
   // Multiplica "x" por "y" y devuelve el valor
-  return x * y;
+  return multiplica(x * y);
 }
 
 function divide(x, y) {
   // Divide "x" entre "y" y devuelve el valor
-  return x / y;
+  return divide(x / y);
 }
 
 function sonIguales(x, y) {
@@ -154,12 +154,12 @@ function esPositivo(numero) {
   //Si el número es positivo, devolver ---> "Es positivo"
   //Si el número es negativo, devolver ---> "Es negativo"
   //Si el número es 0, devuelve false
-  if (Math.sign(numero) == 1) {
-    return `${numero} es positivo`;
-  } else if (Math.sign(numero) == -1) {
-    return `${numero} es negativo`;
+  if (numero === 0) {
+    return false;
+  } else if (numero > 0) {
+    return "Es positivo";
   } else {
-    return `${numero}es cero`;
+    return "Es negativo";
   }
 }
 
@@ -180,8 +180,7 @@ function combinarNombres(nombre, apellido) {
 function obtenerSaludo(nombre) {
   // Toma la string "nombre" y concatena otras string en la cadena para que tome la siguiente forma:
   // "Martin" -> "Hola Martin!"
-  const cadenaNueva = `Hola ${nombre}`;
-  return cadenaNueva;
+  return "Hola " + nombre + "!";
 }
 
 function obtenerAreaRectangulo(alto, ancho) {
